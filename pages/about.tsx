@@ -1,5 +1,6 @@
 // import React from "react";
 import { NextPage } from "next";
+import axios from "axios";
 
 type Post = { userId: number; id: string; title: string; body: string };
 
@@ -8,9 +9,6 @@ interface props {
 }
 
 const About: NextPage<props> = (props) => {
-    // console.log(props);
-
-    // return <h1 className="text-blue-200">About page {props.data[0].title}</h1>;
     return (
         <>
             {props.data.map((element) => (
@@ -22,10 +20,8 @@ const About: NextPage<props> = (props) => {
     );
 };
 About.getInitialProps = async () => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const data: Post[] = await res.json();
-    // return { stars: json.stargazers_count };
-    return { data: data };
+    const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+    return { data: res.data };
 };
 
 export default About;
