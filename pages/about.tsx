@@ -22,7 +22,7 @@ const About: NextPage<props> = (props) => {
                 List
                 {props.data.map((element) => (
                     <li className="text-blue-200 ml-4" key={element.id}>
-                        <Link href={`/post/?id=${element.id}`}>
+                        <Link href={`/post/?id=${element.id}`} as="/gagaga">
                             <a href="">{element.title}</a>
                         </Link>
                     </li>
