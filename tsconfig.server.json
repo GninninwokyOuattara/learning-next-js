@@ -7,5 +7,5 @@
         "isolatedModules": false,
         "noEmit": false
     },
-    "include": ["*.ts"]
+    "include": ["./servers/*.ts"]
 }

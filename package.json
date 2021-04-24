@@ -3,11 +3,13 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "ts-node --project tsconfig.server.json server1.ts",
+        "dev": "ts-node --project tsconfig.server.json servers/server-express.ts",
+        "dev1": "nodemon --watch servers/server-express.ts --ext 'ts' --exec ts-node --project tsconfig.server.json servers/server-express.ts",
         "build": "next build",
         "start": "NODE_ENV=production ts-node server1.js"
     },
     "dependencies": {
+        "express": "^4.17.1",
         "http": "*",
         "next": "10.1.3",
         "react": "17.0.2",
